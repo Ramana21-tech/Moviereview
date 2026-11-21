@@ -1,1 +1,108 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Cine<span>Review</span></h1>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#movies">Movies</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+
+            <div class="nav-buttons">
+                <button class="login-btn">Login</button>
+                <button class="register-btn">Register</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Discover. Watch. Review.</h2>
+            <p>Your opinions make every movie worth discussing.</p>
+            <a href="#movies" class="explore-btn">Explore Movies</a>
+        </div>
+    </section>
+
+    <!-- Movies Section -->
+    <section class="movies-section" id="movies">
+        <div class="section-heading">
+            <h2>Popular Movies</h2>
+            <p>Explore movies and share your experience.</p>
+        </div>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search movies..."
+        >
+
+        <div class="movie-container" id="movieContainer">
+            <!-- Movie cards will be added using JavaScript -->
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section" id="reviews">
+        <h2>Share Your Review</h2>
+
+        <form id="reviewForm">
+            <label for="reviewerName">Your Name</label>
+            <input
+                type="text"
+                id="reviewerName"
+                placeholder="Enter your name"
+                required
+            >
+
+            <label for="movieSelect">Select Movie</label>
+            <select id="movieSelect" required>
+                <option value="">Choose a movie</option>
+            </select>
+
+           <label for="rating">Rating</label>
+<select id="rating" required>
+    <option value="">Select rating</option>
+    <option value="5">🤩 Excellent</option>
+    <option value="4">😍 Very Good</option>
+    <option value="3">😊 Good</option>
+    <option value="2">😐 Average</option>
+    <option value="1">😞 Poor</option>
+</select>
+
+            <label for="reviewText">Your Review</label>
+            <textarea
+                id="reviewText"
+                placeholder="Write your movie experience..."
+                required
+            ></textarea>
+
+            <button type="submit">Submit Review</button>
+        </form>
+
+        <div id="submittedReviews">
+            <h3>Recent Reviews</h3>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 CineReview. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

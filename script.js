@@ -134,3 +134,84 @@ stars.textContent = ratingEmojis[rating];
 // Initialize
 displayMovies(movies);
 populateMovieSelect();
+
+
+// Open Login Form
+function openLogin() {
+    document.getElementById("registerSection").hidden = true;
+    document.getElementById("loginSection").hidden = false;
+
+    document.getElementById("loginSection").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// Open Registration Form
+function openRegister() {
+    document.getElementById("loginSection").hidden = true;
+    document.getElementById("registerSection").hidden = false;
+
+    document.getElementById("registerSection").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// Close Login and Registration Forms
+function closeAuth() {
+    document.getElementById("loginSection").hidden = true;
+    document.getElementById("registerSection").hidden = true;
+}
+
+// Switch from Login to Register
+function switchToRegister(event) {
+    event.preventDefault();
+    openRegister();
+}
+
+// Switch from Register to Login
+function switchToLogin(event) {
+    event.preventDefault();
+    openLogin();
+}
+
+// Registration Form Validation
+document.getElementById("registerForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("registerName").value.trim();
+    const email = document.getElementById("registerEmail").value.trim();
+    const password = document.getElementById("registerPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (!name || !email || !password || !confirmPassword) {
+        alert("Please fill in all the required fields.");
+        return;
+    }
+
+    if (password.length < 8) {
+        alert("Password must contain at least 8 characters.");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+    }
+
+    alert("Registration form validated! Database connection is the next step.");
+});
+
+// Login Form Validation
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
+
+    if (!email || !password) {
+        alert("Please enter your email and password.");
+        return;
+    }
+
+    alert("Login form validated! We will connect account verification to Google Sheets next.");
+});

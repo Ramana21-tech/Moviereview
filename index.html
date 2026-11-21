@@ -21,9 +21,14 @@
             </ul>
 
             <div class="nav-buttons">
-                <button class="login-btn">Login</button>
-                <button class="register-btn">Register</button>
-            </div>
+    <button class="login-btn" onclick="openLogin()">
+        Login
+    </button>
+
+    <button class="register-btn" onclick="openRegister()">
+        Register
+    </button>
+</div>
         </nav>
     </header>
 
@@ -97,6 +102,68 @@
         </div>
     </section>
 
+
+<!-- Login Form -->
+<section class="auth-section" id="loginSection" hidden>
+    <div class="auth-container">
+        <h2>Welcome Back!</h2>
+        <p>Login to your CineReview account.</p>
+
+        <form id="loginForm">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail"
+                   placeholder="Enter your email" required>
+
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword"
+                   placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+            <button type="button" onclick="closeAuth()">Cancel</button>
+        </form>
+
+        <p>Don't have an account?
+            <a href="#" onclick="switchToRegister(event)">Register</a>
+        </p>
+    </div>
+</section>
+
+<!-- Registration Form -->
+<section class="auth-section" id="registerSection" hidden>
+    <div class="auth-container">
+        <h2>Create Account</h2>
+        <p>Join CineReview and share your movie experience.</p>
+
+        <form id="registerForm">
+            <label for="registerName">Full Name</label>
+            <input type="text" id="registerName"
+                   placeholder="Enter your full name" required>
+
+            <label for="registerEmail">Email Address</label>
+            <input type="email" id="registerEmail"
+                   placeholder="Enter your email" required>
+
+            <label for="registerPassword">Password</label>
+            <input type="password" id="registerPassword"
+                   placeholder="Create a password"
+                   minlength="8" required>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword"
+                   placeholder="Confirm your password"
+                   minlength="8" required>
+
+            <button type="submit">Register</button>
+            <button type="button" onclick="closeAuth()">Cancel</button>
+        </form>
+
+        <p>Already have an account?
+            <a href="#" onclick="switchToLogin(event)">Login</a>
+        </p>
+    </div>
+</section>
+
+    
     <!-- Footer -->
     <footer>
         <p>© 2026 CineReview. All rights reserved.</p>
